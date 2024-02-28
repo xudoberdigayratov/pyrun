@@ -35,11 +35,11 @@ async def python(message: types.Message, command: CommandObject):
             Bubble = BubbleRunner()
             result = Bubble.run(command.args)
             if result['result'] == '':
-                await message.reply(f"""<b>🔰 Output :\n\n<code>{result['errors']}</code>\n©️ @{bot_.username}</b>""", reply_markup=await add_group())
+                await message.reply(f"""<b>🔰 Output :\n<code>{result['errors']}</code>\n\n©️ @{bot_.username}</b>""", reply_markup=await add_group())
             else:
-                await message.reply(f"""<b>🔰 Output :\n\n<code>{result['result']}</code>\n©️ @{bot_.username}</b>""", reply_markup=await add_group())
+                await message.reply(f"""<b>🔰 Output :\n<code>{result['result']}</code>\n\n©️ @{bot_.username}</b>""", reply_markup=await add_group())
         else:
-            await message.reply(f"""<b>🔰 Output :\n\n<code>Unexpected error</code>\n©️ @{bot_.username}</b>""",
+            await message.reply(f"""<b>🔰 Output :\n<code>Unexpected error</code>\n\n©️ @{bot_.username}</b>""",
                                 reply_markup=await add_group())
     else:
         await message.reply("""<b>To use mine:
