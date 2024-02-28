@@ -25,6 +25,7 @@ async def inline_handler(query: types.InlineQuery):
                           ),
                           thumb_url="https://img2.teletype.in/files/d6/27/d62724c4-44b0-4fcc-9fd8-8b82bdd8398a.png",
                         ))
-        await query.answer(results, cache_time=3)
-    except:
-        await query.answer([], switch_pm_parameter="Start Bot", switch_pm_text="start", cache_time=5)
+        await query.answer(results, cache_time=5)
+    except Exception as e:
+        print(f'Error: {e}')
+        await query.answer([], cache_time=5, switch_pm_parameter='start', switch_pm_text='Start Bot')
